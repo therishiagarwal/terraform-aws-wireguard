@@ -1,0 +1,23 @@
+# Terraform state
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Variable files with real values
+terraform.tfvars
+*.auto.tfvars
+
+# Crash / plan output
+crash.log
+*.tfplan
+
+# AWS credentials
+.aws/
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+*.log
+*.bak
