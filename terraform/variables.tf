@@ -33,3 +33,15 @@ variable "availability_zone" {
   type        = string
   default     = "ap-southeast-1a"
 }
+
+variable "wireguard_port" {
+  description = "UDP port WireGuard listens on."
+  type        = number
+  default     = 51820
+}
+
+variable "ssh_allowed_cidrs" {
+  description = "CIDR blocks allowed to reach SSH (22). Restrict to your own IP for anything real."
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
+}

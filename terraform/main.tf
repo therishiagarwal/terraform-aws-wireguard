@@ -16,3 +16,12 @@ module "vpc" {
   public_subnet_cidr = var.public_subnet_cidr
   availability_zone  = var.availability_zone
 }
+
+module "security_group" {
+  source = "./modules/security_group"
+
+  name_prefix       = local.name_prefix
+  vpc_id            = module.vpc.vpc_id
+  wireguard_port    = var.wireguard_port
+  ssh_allowed_cidrs = var.ssh_allowed_cidrs
+}
