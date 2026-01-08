@@ -25,3 +25,9 @@ module "security_group" {
   wireguard_port    = var.wireguard_port
   ssh_allowed_cidrs = var.ssh_allowed_cidrs
 }
+
+module "storage" {
+  source = "./modules/storage"
+
+  bucket_name = var.conf_bucket_name
+}

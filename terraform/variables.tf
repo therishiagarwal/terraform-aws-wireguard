@@ -45,3 +45,9 @@ variable "ssh_allowed_cidrs" {
   type        = list(string)
   default     = ["0.0.0.0/0"]
 }
+
+variable "conf_bucket_name" {
+  description = "Globally-unique S3 bucket name for the generated WireGuard client config."
+  type        = string
+  default     = "wireguard-client-conf-change-me"
+}
