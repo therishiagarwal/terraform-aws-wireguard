@@ -31,3 +31,10 @@ module "storage" {
 
   bucket_name = var.conf_bucket_name
 }
+
+module "iam" {
+  source = "./modules/iam"
+
+  name_prefix = local.name_prefix
+  bucket_arn  = module.storage.bucket_arn
+}
