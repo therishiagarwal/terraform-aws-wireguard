@@ -34,6 +34,24 @@ variable "availability_zone" {
   default     = "ap-southeast-1a"
 }
 
+variable "ami_id" {
+  description = "AMI ID for the VPN server (Ubuntu, region-specific)."
+  type        = string
+  default     = "ami-047126e50991d067b"
+}
+
+variable "instance_type" {
+  description = "EC2 instance type for the VPN server."
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "key_name" {
+  description = "Name of an existing EC2 key pair for SSH access."
+  type        = string
+  default     = "wireguard-vpn-key"
+}
+
 variable "wireguard_port" {
   description = "UDP port WireGuard listens on."
   type        = number

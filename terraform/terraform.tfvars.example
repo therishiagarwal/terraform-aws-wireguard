@@ -1,0 +1,15 @@
+# Copy to terraform.tfvars and fill in your own values.
+# terraform.tfvars is gitignored so your real values never get committed.
+
+aws_region        = "ap-southeast-1"
+project_name      = "wireguard"
+environment       = "personal"
+
+# Must be globally unique across all of S3.
+conf_bucket_name  = "wireguard-client-conf-yourname"
+
+# An existing EC2 key pair in the chosen region.
+key_name          = "wireguard-vpn-key"
+
+# Lock SSH down to your own IP instead of the whole internet.
+ssh_allowed_cidrs = ["203.0.113.10/32"]
